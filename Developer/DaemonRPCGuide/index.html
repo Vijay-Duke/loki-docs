@@ -179,16 +179,14 @@
       
         
 
-  
-
-<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+<nav class="md-tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link md-tabs__link--active">
         Home
       </a>
     
@@ -314,7 +312,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../SNRPCGuide/" class="md-tabs__link md-tabs__link--active">
+        <a href="../SNRPCGuide/" class="md-tabs__link">
           Advanced
         </a>
       
@@ -1535,12 +1533,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
     
     <label class="md-nav__link" for="nav-13">
       Advanced
@@ -1556,12 +1552,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13-1" type="checkbox" id="nav-13-1" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13-1" type="checkbox" id="nav-13-1">
     
     <label class="md-nav__link" for="nav-13-1">
       Developer
@@ -1589,510 +1583,10 @@
           
           
 
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Daemon RPC Guide - Old
-      </label>
-    
-    <a href="./" title="Daemon RPC Guide - Old" class="md-nav__link md-nav__link--active">
-      Daemon RPC Guide - Old
-    </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    Introduction
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#json-rpc-methods" class="md-nav__link">
-    JSON RPC Methods:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#other-rpc-methods" class="md-nav__link">
-    Other RPC Methods:
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#json-rpc-methods_1" class="md-nav__link">
-    JSON RPC Methods
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#get_block_count" class="md-nav__link">
-    get_block_count
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#on_get_block_hash" class="md-nav__link">
-    on_get_block_hash
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_block_template" class="md-nav__link">
-    get_block_template
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#submit_block" class="md-nav__link">
-    submit_block
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_last_block_header" class="md-nav__link">
-    get_last_block_header
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_block_header_by_hash" class="md-nav__link">
-    get_block_header_by_hash
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_block_header_by_height" class="md-nav__link">
-    get_block_header_by_height
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_block_headers_range" class="md-nav__link">
-    get_block_headers_range
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_block" class="md-nav__link">
-    get_block
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_connections" class="md-nav__link">
-    get_connections
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_info" class="md-nav__link">
-    get_info
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hard_fork_info" class="md-nav__link">
-    hard_fork_info
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#set_bans" class="md-nav__link">
-    set_bans
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_bans" class="md-nav__link">
-    get_bans
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#flush_txpool" class="md-nav__link">
-    flush_txpool
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_output_histogram" class="md-nav__link">
-    get_output_histogram
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_coinbase_tx_sum" class="md-nav__link">
-    get_coinbase_tx_sum
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_version" class="md-nav__link">
-    get_version
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_fee_estimate" class="md-nav__link">
-    get_fee_estimate
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_alternate_chains" class="md-nav__link">
-    get_alternate_chains
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#relay_tx" class="md-nav__link">
-    relay_tx
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sync_info" class="md-nav__link">
-    sync_info
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_txpool_backlog" class="md-nav__link">
-    get_txpool_backlog
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_output_distribution" class="md-nav__link">
-    get_output_distribution
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#other-daemon-rpc-calls" class="md-nav__link">
-    Other Daemon RPC Calls
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#get_height" class="md-nav__link">
-    /get_height
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_blocksbin" class="md-nav__link">
-    /get_blocks.bin
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_blocks_by_heightbin" class="md-nav__link">
-    /get_blocks_by_height.bin
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_hashesbin" class="md-nav__link">
-    /get_hashes.bin
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_o_indexesbin" class="md-nav__link">
-    /get_o_indexes.bin
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_outsbin" class="md-nav__link">
-    /get_outs.bin
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_transactions" class="md-nav__link">
-    /get_transactions
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_alt_blocks_hashes" class="md-nav__link">
-    /get_alt_blocks_hashes
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#is_key_image_spent" class="md-nav__link">
-    /is_key_image_spent
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#send_raw_transaction" class="md-nav__link">
-    /send_raw_transaction
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#start_mining" class="md-nav__link">
-    /start_mining
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stop_mining" class="md-nav__link">
-    /stop_mining
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mining_status" class="md-nav__link">
-    /mining_status
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#save_bc" class="md-nav__link">
-    /save_bc
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_peer_list" class="md-nav__link">
-    /get_peer_list
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#set_log_hash_rate" class="md-nav__link">
-    /set_log_hash_rate
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#set_log_level" class="md-nav__link">
-    /set_log_level
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#set_log_categories" class="md-nav__link">
-    /set_log_categories
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_transaction_pool" class="md-nav__link">
-    /get_transaction_pool
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_transaction_pool_hashesbin" class="md-nav__link">
-    /get_transaction_pool_hashes.bin
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_transaction_pool_stats" class="md-nav__link">
-    /get_transaction_pool_stats
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stop_daemon" class="md-nav__link">
-    /stop_daemon
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_info-not-json" class="md-nav__link">
-    /get_info (not JSON)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_limit" class="md-nav__link">
-    /get_limit
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#set_limit" class="md-nav__link">
-    /set_limit
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#out_peers" class="md-nav__link">
-    /out_peers
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#in_peers" class="md-nav__link">
-    /in_peers
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#start_save_graph" class="md-nav__link">
-    /start_save_graph
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stop_save_graph" class="md-nav__link">
-    /stop_save_graph
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_outs" class="md-nav__link">
-    /get_outs
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#update" class="md-nav__link">
-    /update
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sources" class="md-nav__link">
-    Sources:
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
-  </li>
-
-        
-          
-          
-          
-
 
   <li class="md-nav__item">
     <a href="../DaemonRPCBeta/" title="Daemon RPC Guide - Beta" class="md-nav__link">
       Daemon RPC Guide - Beta
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../WalletRPCGuide/" title="Wallet RPC Guide - Old" class="md-nav__link">
-      Wallet RPC Guide - Old
     </a>
   </li>
 
@@ -5149,41 +4643,6 @@ curl \
       
         
 <footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-        
-          <a href="../SNRPCGuide/" title="Service Node RPC Guide" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Service Node RPC Guide
-              </span>
-            </div>
-          </a>
-        
-        
-          <a href="../DaemonRPCBeta/" title="Daemon RPC Guide - Beta" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Daemon RPC Guide - Beta
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
