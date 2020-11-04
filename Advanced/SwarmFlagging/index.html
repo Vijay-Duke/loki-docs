@@ -1705,13 +1705,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#exit-node-test" class="md-nav__link">
-    Exit Node Test
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1859,18 +1852,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../TechnicalSpecs/" title="Technical Specs" class="md-nav__link">
-      Technical Specs
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../Cryptoeconomics/" title="Cryptoeconomics" class="md-nav__link">
       Cryptoeconomics
     </a>
@@ -1932,13 +1913,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-12" type="checkbox" id="nav-12-12">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-11" type="checkbox" id="nav-12-11">
     
-    <label class="md-nav__link" for="nav-12-12">
+    <label class="md-nav__link" for="nav-12-11">
       Guides
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-12-12">
+      <label class="md-nav__title" for="nav-12-11">
         Guides
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -2039,13 +2020,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#exit-node-test" class="md-nav__link">
-    Exit Node Test
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2075,7 +2049,7 @@
 <p>For Loki, such distributed flagging faces major implementation issues. Fundamentally, every <a href="../../ServiceNodes/SNOverview/">Service Nodes</a> is financially incentivised to flag every other Service Node as a bad actor. This is because when a Service Node is flagged it will face removal from the staking pool and thereby increase the flaggers chance at winning a reward. One potential method of  distributed flagging is one in which evidence is provided when a flagging event occurs, however, this solution falls prey to nodes fabricating evidence in their favour.  Conversely, flagging without restrictions allows either single nodes or groups of collaborating nodes to intentionally flag honest nodes in order to improve their chances of winning <a href="../Cryptoeconomics/">block  rewards</a>. To circumvent these issues, Loki proposes swarm flagging.</p>
 <p>Swarm flagging works by using existing swarms to choose members that will participate in each testing round. Each Service Node holds a copy of the blockchain, and each block created by a miner will deterministically select a number of test swarms. Every block, 1% of the networks swarms are selected for participation in a testing swarm. To calculate participating swarms, the hash of the five previous blocks is used to seed a Mersenne Twister function which then selects swarms by order of their position in the deterministic list.</p>
 <p><img alt="Testing Swarm" src="../../assets/Swarm.PNG" /></p>
-<p>When a swarm has been selected to participate, each node in that swarm is expected to conduct a number of tests on every other node in the swarm. These are not active tests; rather each node stores historical information about its interactions with every other nodenwithin its swarm. Information about bandwidth, <a href="../../LokiServices/Messenger/Session/">message storage</a>, blockchain requests, and <a href="/ServiceNodes/ServiceNodeFunctions/#exit-nodes">exit node</a> functionality are collected and retained over time. New swarm entrants that have yet to gather this information can query <a href="../../ServiceNodes/SNOverview/">Service Nodes</a> outside of their immediate swarm so as to gather data on each of the Service Nodes they test.</p>
+<p>When a swarm has been selected to participate, each node in that swarm is expected to conduct a number of tests on every other node in the swarm. These are not active tests; rather each node stores historical information about its interactions with every other nodenwithin its swarm. Information about bandwidth, <a href="../../LokiServices/Messenger/Session/">message storage</a> and blockchain requests, functionality are collected and retained over time. New swarm entrants that have yet to gather this information can query <a href="../../ServiceNodes/SNOverview/">Service Nodes</a> outside of their immediate swarm so as to gather data on each of the Service Nodes they test.</p>
 <p>Each <a href="../../ServiceNodes/SNOverview/">Service Nodes</a> decides how to vote on each of the other swarm members. Once it has made its decision based on the aforementioned tests, it collects and broadcasts its votes to the swarm. Each node in the swarm can now check the votes for all members. If any single node in the swarm has over 50% of the nodes voting against  it, any swarm member has the required information to construct a deregistration transaction. Once this transaction is validated and included in a block, all Service Nodes update their DHT, purging any nodes that were voted off.</p>
 <p><img alt="Dishonest Node" src="../../assets/Swarm2.PNG" /></p>
 <h2 id="testing-suite">Testing Suite<a class="headerlink" href="#testing-suite" title="Permanent link">&para;</a></h2>
@@ -2092,10 +2066,6 @@
 <p><a href="../../ServiceNodes/SNOverview/">Service Nodes</a> are expected to hold a full copy of the Loki blockchain. By holding a full copy of the blockchain, Service Nodes can perform a number of tasks that are essential to users of the network including acting as a <a href="/ServiceNodes/ServiceNodeFunctions/#remote-nodes">remote node</a>, validating transactions, and locking transactions in <a href="../../LokiServices/Blink/">Blink</a>.</p>
 <p>As honest nodes also hold a copy of the blockchain, a dishonest node could avoid holding a full copy by simply requesting  blocks from an honest node when tested. To avoid this outcome, the blockchain storage test is designed so that honest nodes that hold a copy of the blockchain can pass this test, while dishonest nodes cannot.</p>
 <p>To achieve this, the testing node requests each tested node to make a selection of <strong><em>K</em></strong> random transactions within the history of the blockchain which are then concatenated and hashed. This hash is then returned to the testing node. By measuring the latency of this request, the testing node can compare the latency with the expected return time <strong><em>T</em></strong>. The exact value for <strong><em>T</em></strong> will be set to accurately differentiate expected latency between loading from disk and downloading blocks from the network. For any attacker, it should be infeasible to download and hash <strong><em>K</em></strong> blocks within <strong><em>T</em></strong>, and thus piggybacking attacks become difficult. </p>
-<h3 id="exit-node-test">Exit Node Test<a class="headerlink" href="#exit-node-test" title="Permanent link">&para;</a></h3>
-<p><a href="../../ServiceNodes/SNOverview/">Service Nodes</a> that opt to act as <a href="/ServiceNodes/ServiceNodeFunctions/#exit-nodes">exit nodes</a> receive additional rewards, and so functional tests are required to ensure this extra reward is not abused.</p>
-<p>For functional exit testing to occur, a Service Node must be able to emulate the natural search behaviour of a human. If a Service Node can detect that it is being tested, it can respond only to tests and discard legitimate user requests. Emulating natural page request behaviour is difficult, however, exit tests can be designed in such a way so as to make the overhead of sorting between legitimate requests and tests sufficiently difficult so that the difference in bandwidth cost between running a legitimate node and a malicious node is negligible.</p>
-<p>Service Nodes use a list of search engines, held locally, combined with a dictionary so as to construct pseudorandom natural search terms. The search terms are then fed into the search engines and web pages are randomly chosen from the results. The Service node can now build a path with random nodes acting as relays and the node being tested as the exit node. From this exit, the Service Node requests the webpage result generated from its pseudorandom search. If the result returned by the exit node matches the result as generated by the Service Node, then the exit node is deemed to have passed the test.</p>
                 
                   
                 
