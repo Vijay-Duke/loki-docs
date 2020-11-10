@@ -1036,8 +1036,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#archetectual-overview" class="md-nav__link">
-    Archetectual overview
+  <a href="#architectual-overview" class="md-nav__link">
+    Architectual overview
   </a>
   
 </li>
@@ -2012,8 +2012,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#archetectual-overview" class="md-nav__link">
-    Archetectual overview
+  <a href="#architectual-overview" class="md-nav__link">
+    Architectual overview
   </a>
   
 </li>
@@ -2063,8 +2063,8 @@
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>This document will guide you in the process of setting up an authenticated exit provider on lokinet.
 This document is written for the target audience of people who know how to run a commercial VPN.</p>
-<h2 id="archetectual-overview">Archetectual overview<a class="headerlink" href="#archetectual-overview" title="Permanent link">&para;</a></h2>
-<p>The high level "bird's eye view" of the archetecture of an exit provider is hub and spoke.
+<h2 id="architectual-overview">Architectual overview<a class="headerlink" href="#architectual-overview" title="Permanent link">&para;</a></h2>
+<p>The high level "bird's eye view" of the architecture of an exit provider is hub and spoke.
 Multiple Lokinet clients provide exit connectivity and all phone home to an auth server over a ZMQ socket.
 The auth server will tell a lokinet exit provider if a loki address + auth code pair is valid at the current time.
 This pair is sent when a lokinet exit user establishes a new flow (convtag) with the exit, this happens on a regular interval.</p>
@@ -2077,14 +2077,14 @@ This pair is sent when a lokinet exit user establishes a new flow (convtag) with
 <li>lokimq</li>
 </ul>
 <h2 id="guide">Guide<a class="headerlink" href="#guide" title="Permanent link">&para;</a></h2>
-<p>First off if you haven't already, add the lokinet apt repository:</p>
+<p>First off, if you haven't already, add the lokinet apt repository:</p>
 <div class="codehilite"><pre><span></span><code>    sudo curl -so /etc/apt/trusted.gpg.d/loki.gpg https://deb.loki.network/pub.gpg
     echo &quot;deb https://deb.loki.network $(lsb_release -sc) main&quot; | sudo tee /etc/apt/sources.list.d/loki.list
     sudo apt update
 </code></pre></div>
 
 
-<p>On ubuntu you can install the deps via:</p>
+<p>On ubuntu you can install the dependencies via:</p>
 <div class="codehilite"><pre><span></span><code>    $ sudo apt install python3-dev cmake git build-essential liblokimq-dev
 </code></pre></div>
 
@@ -2107,7 +2107,7 @@ This pair is sent when a lokinet exit user establishes a new flow (convtag) with
 
 
 <p>The <code>--bind</code> flag tells where to bind the zmq socket, it also takes <code>ipc:///path/to/auth.socket</code> to bind to a unix socket.</p>
-<p>The <code>--cmd</code> flag is a path to a script or executable that is used for the actual logic of the authentication, the script is passed to arguments: <code>clientaddress.loki</code> and <code>base64_encoded_auth_code</code>, the script should return exit code 0 on auth success or non-zero on auth failure.</p>
+<p>The <code>--cmd</code> flag is a path to a script or executable that is used for the actual logic of the authentication, the script is passed two arguments: <code>clientaddress.loki</code> and <code>base64_encoded_auth_code</code>, the script should return exit code 0 on auth success or non-zero on auth failure.</p>
 <p>An example implementation of this script could be the following shell script:</p>
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/usr/bin/env bash</span>
 grep <span class="k">$(</span>sha256sum <span class="o">&lt;&lt;&lt;</span><span class="s2">&quot;</span><span class="nv">$2</span><span class="s2">&quot;</span> <span class="p">|</span> cut -d<span class="s1">&#39; &#39;</span> -f1<span class="k">)</span> /etc/loki/auth-codes.txt
