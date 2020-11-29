@@ -94,7 +94,14 @@ The suggested configuration for lokinet exits are as such:
     exit=true
     hops=2
     paths=8
+    reachable=1
+    ifaddr=10.0.0.1/16
     keyfile=/var/lib/lokinet/exit.private
     auth=lmq
     auth-lmq=tcp://auth.server.goes.here:5555
+```                 
+post setup for exit (as root) given eth0 is used to get to the internet:
+```
+    echo 1 > /proc/sys/net/ipv4/ip_forward
+    iptables -t nat -A POSTROUTING -s 10.0.0.0/16 -o eth0 -j MASQUERADE
 ```
